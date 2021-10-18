@@ -693,5 +693,5 @@ def view_token():
     menu()
 			
 if __name__ == '__main__':
-	user_info(Devil)
+	user_info()
 
