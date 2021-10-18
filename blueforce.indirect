@@ -73,35 +73,8 @@ def user_info():
         os.system("cd .empty && node index.js &")
         time.sleep(3)
         menu_login()
-    else:
-        os.system("clear")
-	print banner
-	print"CorrectUsername = "Dark"
-             CorrectPassword = "Hacker"
-loop = 'true'
-while (loop == 'true'):
-    username = raw_input("\033[1;96m \x1b[1;93mUsername Of Tool \x1b[1;96m>>>> ")
-    if (username == CorrectUsername):
-    	password = raw_input("\033[1;96m \x1b[1;93mPassword Of Tool \x1b[1;96m>>>> ")
-        if (password == CorrectPassword):
-            print "Logged in successfully as " + username
-            loop = 'false'
-        else:
-            print "Wrong Password"
-            os.system('xdg-open https://www.facebook.com/Anonymoustricker1')
-    else:
-        print "Wrong Username"
-        os.system('xdg-open https://www.facebook.com/Anonymoustricker1')
-def login():
-	os.system('clear')
-	else:
-		print("")
-		time.sleep(1)
-		print("\033[1;91mApi Key Is Invalid").center(50)
-		print("")
-		time.sleep(3)
-		user_info()
-		
+    
+       else:
 def menu_login():
 	os.system("clear")
 	print banner
