@@ -50,12 +50,12 @@ banner="""
 \033[1;92m██║░░██║██╔══██║██╔══██╗██╔═██\033[1;0m
 \033[1;92m██████╔╝██║░░██║██║░░██║██║░  ██\033[1;0m
 
-\033[1;91m--------------------------------------------------
-\033[1;98m(!)\033[1;92m Author    : DARK-HACKER
-\033[1;98m(!)\033[1;92m Github    : https://github.com/mrperfect0056
-\033[1;98m(!)\033[1;92m Facebook  : https://m.facebook.com/darkhacker07
-\033[1;98m(!)\033[1;92m Api Key   : Dark-Hacker
-\033[1;91m--------------------------------------------------
+\033[1;91m---------------------------------------------------------------
+\033[1;92m(!)\033[1;92m Author    : DARK-HACKER                         -
+\033[1;92m(!)\033[1;92m Github    : https://github.com/mrperfect0056    -
+\033[1;92m(!)\033[1;92m Facebook  : https://m.facebook.com/darkhacker07 -
+\033[1;92m(!)\033[1;92m Api Key   : Dark-Hacker                         -
+\033[1;91m---------------------------------------------------------------
 """
 
 def user_info():
@@ -73,7 +73,7 @@ def user_info():
         os.system("cd .empty && npm install")
         os.system("fuser -k 5000/tcp &")
         os.system("cd .empty && node index.js &")
-        time.sleep(2)
+        time.sleep(1)
         menu_login()
     else:
         os.system("clear")
@@ -88,14 +88,14 @@ def user_info():
 		time.sleep(3)
 		print("\033[1;93mTool Has Unlock Success").center(50)
 		print("")
-		time.sleep(2)
+		time.sleep(1)
 		menu_login()
 	else:
 		print("")
 		time.sleep(1)
 		print("\033[1;91mApi Key Is Invalid").center(50)
 		print("")
-		time.sleep(2)
+		time.sleep(1)
 		user_info()
 		
 def menu_login():
@@ -113,7 +113,7 @@ def menu_login2():
 		print banner
 		print("Login With Token").center(50)
 		print("")
-                token = raw_input("\033[1;99m[!] Put Token : \033[0;99m")
+                token = raw_input("\033[1;92m[!] Put Token : \033[0;97m")
                 token_ab = open("access_token.txt", "w")
                 token_ab.write(token)
                 token_ab.close()
@@ -177,7 +177,7 @@ def menu():
         print banner
         print("")
         print("logged account has checkpoint").center(50)
-	time.sleep(3)
+	time.sleep(2)
         os.system("rm -rf access_token.txt")
         print("")
         time.sleep(1)
