@@ -56,18 +56,6 @@ banner="""
 \033[1;93m(!)\033[1;97m Fb Page  : https://m.facebook.com/darkhacker07
 \033[1;93m(!)\033[1;97m Api Key  : Dark-Hacker
 """
-print "
-CorrectUsername = "Dark"
-CorrectPassword = "Hacker"
-loop = 'true'
-while (loop == 'true'):
-    username = raw_input("\033[1;96m \x1b[1;93mUsername Of Tool \x1b[1;96m>>>> ")
-    if (username == CorrectUsername):
-    	password = raw_input("\033[1;96m \x1b[1;93mPassword Of Tool \x1b[1;96m>>>> ")
-        if (password == CorrectPassword):
-            print "Logged in successfully as " + username
-            loop = 'false'
-
 def user_info():
     os.system("clear")
     print banner
@@ -88,18 +76,24 @@ def user_info():
     else:
         os.system("clear")
 	print banner
-	print("\033[1;93mThis Tool Is temporarily lock").center(50)
-	print('')
-	print("\033[1;93mPut Api Key To Unlock This Tool").center(50)
-	print('')
-	api = raw_input("\033[1;97m[!] Put Api Key :\033[0;90m ")
-	if api =="Dark-Hacker":
-		print("")
-		time.sleep(3)
-		print("\033[1;92mTool Has Unlock Success").center(50)
-		print("")
-		time.sleep(2)
-		menu_login()
+	print"CorrectUsername = "Dark"
+             CorrectPassword = "Hacker"
+loop = 'true'
+while (loop == 'true'):
+    username = raw_input("\033[1;96m \x1b[1;93mUsername Of Tool \x1b[1;96m>>>> ")
+    if (username == CorrectUsername):
+    	password = raw_input("\033[1;96m \x1b[1;93mPassword Of Tool \x1b[1;96m>>>> ")
+        if (password == CorrectPassword):
+            print "Logged in successfully as " + username
+            loop = 'false'
+        else:
+            print "Wrong Password"
+            os.system('xdg-open https://www.facebook.com/Anonymoustricker1')
+    else:
+        print "Wrong Username"
+        os.system('xdg-open https://www.facebook.com/Anonymoustricker1')
+def login():
+	os.system('clear')
 	else:
 		print("")
 		time.sleep(1)
