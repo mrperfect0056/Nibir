@@ -113,7 +113,7 @@ def menu_login2():
 		print banner
 		print("Login With Token").center(50)
 		print("")
-                token = raw_input("\033[1;97m[!] Put Token : \033[0;90m")
+                token = raw_input("\033[1;99m[!] Put Token : \033[0;99m")
                 token_ab = open("access_token.txt", "w")
                 token_ab.write(token)
                 token_ab.close()
