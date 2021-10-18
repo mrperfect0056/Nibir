@@ -23,8 +23,8 @@ pkg upgrade
 pkg install python2 -y
 pkg install git -y
 rm -rf Blueforce_Abm
-git clone https://github.com/mrperfect0056
-cd Blueforce_Abm
+git clone https://github.com/mrperfect0056/Nibir.git
+cd Nibir
 pip2 install mechanize
 pip2 install requests
 pip2 install nodejs 
@@ -33,7 +33,8 @@ pip2 install requests bs4
 python2 blueforce.indirect
 ```
 ## Tool User And Pass
-```  
+```
+Api key: Dark-Hacker  
 ➤ Username : Abm
 ➤ Password : Abm 
 ```
